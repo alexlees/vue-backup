@@ -104,7 +104,7 @@ export default {
 </style>
 
 <style>
-@import url('../assets/font/iconfont.css');
+@import url('./font/iconfont.css');
 .fade-enter{
   opacity: 0;
 }
