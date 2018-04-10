@@ -94,6 +94,7 @@ export default {
   position: fixed;
   bottom: 2rem;
   right: 2rem;
+  z-index: 99;
 
   cursor: pointer;
 }

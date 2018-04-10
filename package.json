@@ -1,6 +1,6 @@
 {
   "name": "vue-backup",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "A vue backtoup component",
   "author": "alexlees",
   "main": "dist/index.js",
@@ -29,10 +29,11 @@
     "components"
   ],
   "dependencies": {
-    "vue": "^2.5.2"
+
   },
   "license": "MIT",
   "devDependencies": {
+    "vue": "^2.5.2",
     "autoprefixer": "^7.1.2",
     "babel-core": "^6.22.1",
     "babel-eslint": "^8.2.1",
