@@ -20,7 +20,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git@github.com:didi/cube-ui.git"
+    "url": "https://github.com/alexlees/vue-back-to-top.git"
   },
   "keywords": [
     "backToTop",
