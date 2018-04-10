@@ -2,7 +2,7 @@
   "name": "vue-backtotop",
   "version": "1.0.0",
   "description": "A vue backtoup component",
-  "author": "alexlees <18323965465@163.com>",
+  "author": "alexlees",
   "main": "dist/index.js",
   "module": "src/components/index.js",
   "scripts": {
