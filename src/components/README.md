@@ -1,4 +1,4 @@
-# vue-backup
+# vue-backtotop
 
 > A vue backtoup component
 
@@ -23,7 +23,7 @@ new Vue({
 
 ```
 
-```html
+```javascript
 // app.vue
 <template>
 /*
@@ -41,6 +41,7 @@ new Vue({
 </template>
 
 <script>
+
 export default {
   name: 'App'
 }

@@ -1,6 +1,6 @@
 {
   "name": "vue-backup",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A vue backtoup component",
   "author": "alexlees",
   "main": "dist/index.js",
