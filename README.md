@@ -26,14 +26,15 @@ new Vue({
 ```html
 // app.vue
 <template>
-/*
+<!--
 * @props scrollY:         Number required: false 控制backUp组件出现时机
 * @props scrollDuration:  Number required: false 控制backUp向上滚动动画时长
 *
 * TODO  添加自定义icon
 * TODO  添加demo 动图
 * TODO  添加组件位置 控制props
-*/
+*
+-->
   <div id="app">
     <someThingYourComponents/>
     <backUp/>
