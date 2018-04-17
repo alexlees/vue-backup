@@ -1,7 +1,8 @@
 <template>
   <transition name="fade">
-    <div :class="$style.wallpaper" v-show="show" @click="initClick">
-      <i class="icon-top iconfont" :class="$style.font"></i>
+    <div :class="[$style.wallpaper, className]" v-show="show" @click="initClick">
+      <i class="iconfont icon-top" :class="$style.font" v-if="icon"></i>
+      <slot/>
     </div>
   </transition>
 </template>
@@ -19,13 +20,23 @@ export default {
     },
     scrollDuration: {
       type: Number,
-      default: 2000
+      default: 0
+    },
+    // 覆盖样式
+    className: {
+      type: String,
+      default: ''
     }
   },
   data () {
     return {
       scroll: this.scrollY,
       show: false
+    }
+  },
+  computed: {
+    icon () {
+      return !this.$slots.default
     }
   },
   methods: {
@@ -44,7 +55,7 @@ export default {
           this.show = false
         }
       }
-      this.timeId = requestAnimationFrame(callBack)
+      requestAnimationFrame(callBack)
     },
     initClick (e) {
       this.cancelScroll()
@@ -63,6 +74,7 @@ export default {
         }
         if (window.scrollY === 0) {
           this.initScroll()
+          this.$emit('scrollTop', true)
           return
         }
         window.scrollTo(0, Math.round(cosParameter + cosParameter * Math.cos(scrollCount)))
@@ -83,13 +95,13 @@ export default {
 
 <style module>
 .wallpaper{
-  width: 4rem;
-  height: 4rem;
+  width: 3rem;
+  height: 3rem;
   border-radius: 50%;
   background: #444444;
   color: aliceblue;
   text-align: center;
-  line-height: 4rem;
+  line-height: 3rem;
 
   position: fixed;
   bottom: 2rem;
@@ -100,7 +112,7 @@ export default {
 }
 .font{
   color: inherit;
-  font-size: 2.4rem !important;
+  font-size: 2rem !important;
 }
 </style>
 

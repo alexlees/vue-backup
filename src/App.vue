@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <img src="../static/code.png" style="max-width:100%;" alt="">
     <p>test</p>
     <p>test</p>
     <p>test</p>
@@ -100,7 +101,9 @@
     <p>test</p>
     <p>test</p>
     <p>test</p>
-    <backUp/>
+    <backUp>
+      <i class="iconfont icon-top"></i>
+    </backUp>
   </div>
 </template>
 
@@ -112,12 +115,8 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+*{
+  margin: 0;
+  padding: 0;
 }
 </style>

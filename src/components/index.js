@@ -1,4 +1,4 @@
-import backToUp from './backtotop'
+import backToUp from './backup'
 const backUp = {}
 
 const install = (Vue) => {
@@ -14,3 +14,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 export default backUp
+
+export {
+  backToUp
+}
