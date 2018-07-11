@@ -6,7 +6,6 @@ export {default as Props} from './config';
 function install(Vue) {
 	if (install.installed) return;
   install.installed = true;
-  console.log(component)
 	Vue.component(component.name, component);
 }
 

@@ -15,7 +15,6 @@
 
 <script>
 import Props from './config.js'
-import 'animate.css'
 export default {
   name: 'v-backup',
   props: {
@@ -119,6 +118,7 @@ export default {
 </script>
 <style>
 @import 'https://at.alicdn.com/t/font_682351_ahlvoj7xbt2lc8fr.css';
+@import 'https://unpkg.com/animate.css/animate.css';
 </style>
 
 <style module>
