@@ -1,58 +1,48 @@
 # vue-backup
 ***
-> A vue backup component
+> 一个回到顶部Vue组件，动画、icon
 
 ***
-## Build Setup
 
+## [DEMO](https://alexlees.github.io/vue-backup/)
+
+## 安装
+
+0. npm || yarn
 ``` bash
 # install dependencies
 npm i vue-backup -s
+yarn add vue-backup
 ```
 ***
-## Usage
+1. CDN
+```html
+<script src="https://unpkg.com/vue-backup/dist/vue-backup.min.js"></script>
+```
+## 使用
 ```javascript
 // main.js
-// global init component
+// 全局注册
 import Vue from 'vue'
-import backUp from 'vue-backup'
+import BackUp from 'vue-backup'
 
-Vue.use(backUp)
+Vue.use(BackUp)
 
 new Vue({
   el: '#app',
   components: { App },
   template: '<App/>'
 })
-// local init component
+// 局部注册
 // app.vue
-import { backToUp } from 'vue-backup'
+import { BackUp } from 'vue-backup'
 
 export default {
   name: 'App',
-  components: { backToUp }
+  components: {
+    [BackUp.name]: BackUp  // 推荐该形式注册
+  }
 }
-```
-
-```html
-// app.vue
-<template>
-  <div id="app">
-    <someThingYourComponents/>
-    <backUp/>
-  </div>
-</template>
-
-<script>
-export default {
-  name: 'App'
-}
-</script>
-
-<style>
-
-</style>
-
 ```
 
 ***
@@ -60,9 +50,12 @@ export default {
 ## props
 | name | desc | type | default | required |
 | :--: | :--: | ---: | :-----: | :------: |
-| scrollY | 控制backUp出现时机(px) | Number | 500 | false |
-| scrollDuration | 控制backUp向上动画时长(ms) | Number | 0 | false |
-| className | 覆盖backUp样式 | String | '' | false |
+| scrollY | 控制组件出现时机(px) | Number | 1000 | false |
+| enterAnimatedName | 组件出现动画| String | rubberBand | false |
+| leaveAnimatedName | 组件消失动画 | String | bounceOut | false |
+| size | icon 字体大小(px) | Number | 20 | false |
+| el | 滚动元素 | HTMLElement \|\| window | window | false |
+| icon | 默认显示icon | Props.icon | Props.icon.top | false |
 
 ***
 
@@ -73,11 +66,57 @@ export default {
 
 ***
 
-## TODO
-- [ x ] 自定义icon(slot 实现)
-- [ x ] 覆盖样式(props 实现)
-- [   ] 滚动到顶部 触发事件
+## 提示
+1. 可选icon封装在Props.icon对象中，修改默认icon方式如下：
+```html
+<template>
+  <div>
+    <v-backup :icon="icon"/>
+    <!-- 修改默认icon -->
+  </div>
+</template>
+
+<script>
+import { Props, BackUp } from 'vue-backup'
+export default {
+  name: 'test-icon',
+  components: {
+    [BackUp.name]: BackUp  // 推荐该形式注册
+  },
+  data () {
+    return {
+      icon: Props.icon.xxx // 通过该形式修改默认icon
+    }
+  }
+}
+</script>
+```
+
+2. 组件依赖[animate.css](https://github.com/daneden/animate.css) enterAnimatedName leaveAnimatedName 可选值如下：
+
+| AnimatedName      |                    |                     |                      |
+| ----------------- | ------------------ | ------------------- | -------------------- |
+| `bounce`          | `flash`            | `pulse`             | `rubberBand`         |
+| `shake`           | `headShake`        | `swing`             | `tada`               |
+| `wobble`          | `jello`            | `bounceIn`          | `bounceInDown`       |
+| `bounceInLeft`    | `bounceInRight`    | `bounceInUp`        | `bounceOut`          |
+| `bounceOutDown`   | `bounceOutLeft`    | `bounceOutRight`    | `bounceOutUp`        |
+| `fadeIn`          | `fadeInDown`       | `fadeInDownBig`     | `fadeInLeft`         |
+| `fadeInLeftBig`   | `fadeInRight`      | `fadeInRightBig`    | `fadeInUp`           |
+| `fadeInUpBig`     | `fadeOut`          | `fadeOutDown`       | `fadeOutDownBig`     |
+| `fadeOutLeft`     | `fadeOutLeftBig`   | `fadeOutRight`      | `fadeOutRightBig`    |
+| `fadeOutUp`       | `fadeOutUpBig`     | `flipInX`           | `flipInY`            |
+| `flipOutX`        | `flipOutY`         | `lightSpeedIn`      | `lightSpeedOut`      |
+| `rotateIn`        | `rotateInDownLeft` | `rotateInDownRight` | `rotateInUpLeft`     |
+| `rotateInUpRight` | `rotateOut`        | `rotateOutDownLeft` | `rotateOutDownRight` |
+| `rotateOutUpLeft` | `rotateOutUpRight` | `hinge`             | `jackInTheBox`       |
+| `rollIn`          | `rollOut`          | `zoomIn`            | `zoomInDown`         |
+| `zoomInLeft`      | `zoomInRight`      | `zoomInUp`          | `zoomOut`            |
+| `zoomOutDown`     | `zoomOutLeft`      | `zoomOutRight`      | `zoomOutUp`          |
+| `slideInDown`     | `slideInLeft`      | `slideInRight`      | `slideInUp`          |
+| `slideOutDown`    | `slideOutLeft`     | `slideOutRight`     | `slideOutUp`         |
+
 
 ***
 
-## [Github](https://github.com/alexlees)
+## [Github](https://github.com/alexlees/vue-backup)
