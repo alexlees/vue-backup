@@ -1,25 +1,27 @@
 # vue-backup
-***
-> 一个回到顶部Vue组件，动画、icon
 
-***
+> 一个回到顶部Vue组件，动画、icon
 
 ## [DEMO](https://alexlees.github.io/vue-backup/)
 
 ## 安装
 
-0. npm || yarn
+1. npm || yarn
+
 ``` bash
 # install dependencies
 npm i vue-backup -s
 yarn add vue-backup
 ```
-***
-1. CDN
+
+2. CDN
+
 ```html
 <script src="https://unpkg.com/vue-backup/dist/vue-backup.min.js"></script>
 ```
+
 ## 使用
+
 ```javascript
 // main.js
 // 全局注册
@@ -48,6 +50,7 @@ export default {
 ***
 
 ## props
+
 | name | desc | type | default | required |
 | :--: | :--: | ---: | :-----: | :------: |
 | scrollY | 控制组件出现时机(px) | Number | 1000 | false |
@@ -60,6 +63,7 @@ export default {
 ***
 
 ## slot
+
 | name | desc | info |
 | :--: | :--: | ---: |
 | default | icon插槽 | 不传递会使用组件默认icon |
@@ -67,7 +71,9 @@ export default {
 ***
 
 ## 提示
+
 1. 可选icon封装在Props.icon对象中，修改默认icon方式如下：
+
 ```html
 <template>
   <div>
@@ -92,7 +98,7 @@ export default {
 </script>
 ```
 
-2. 组件依赖[animate.css](https://github.com/daneden/animate.css) enterAnimatedName leaveAnimatedName 可选值如下：
+1. 组件依赖[animate.css](https://github.com/daneden/animate.css) enterAnimatedName leaveAnimatedName 可选值如下：
 
 | AnimatedName      |                    |                     |                      |
 | ----------------- | ------------------ | ------------------- | -------------------- |
@@ -115,8 +121,5 @@ export default {
 | `zoomOutDown`     | `zoomOutLeft`      | `zoomOutRight`      | `zoomOutUp`          |
 | `slideInDown`     | `slideInLeft`      | `slideInRight`      | `slideInUp`          |
 | `slideOutDown`    | `slideOutLeft`     | `slideOutRight`     | `slideOutUp`         |
-
-
-***
 
 ## [Github](https://github.com/alexlees/vue-backup)
